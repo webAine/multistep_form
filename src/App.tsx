@@ -40,11 +40,6 @@ const App = () => {
     if (!isLastStep) return nextStep();
 
     setIsSubmitted(true);
-
-    <Alert.Root status='success'>
-      <Alert.Indicator />
-      <Alert.Title>You have successfully registered.</Alert.Title>
-    </Alert.Root>;
   };
 
   return (
@@ -73,9 +68,7 @@ const App = () => {
           <Alert.Indicator />
           <Alert.Content>
             <Alert.Title>Success!</Alert.Title>
-            <Alert.Description>
-              Your application has been received. We will review your application and respond within the next 48 hours.
-            </Alert.Description>
+            <Alert.Description>You have successfully registered. We have sent you a confirmation email.</Alert.Description>
           </Alert.Content>
           <CloseButton onClick={() => setIsSubmitted(false)} pos='relative' top='-2' insetEnd='-2' />
         </Alert.Root>
