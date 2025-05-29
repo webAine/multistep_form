@@ -1,15 +1,13 @@
+import FormInput from './FormInput';
 import type { UserFormProps } from '../types/types';
 import FormWrapper from './FormWrapper';
 
 const UserForm = ({ firstName, lastName, age, updateFields }: UserFormProps) => {
   return (
     <FormWrapper title='User Details'>
-      <label>First Name</label>
-      <input autoFocus required type='text' value={firstName} onChange={(e) => updateFields({ firstName: e.target.value })} />
-      <label>Last Name</label>
-      <input required type='text' value={lastName} onChange={(e) => updateFields({ lastName: e.target.value })} />
-      <label>Age</label>
-      <input required min={1} type='number' value={age} onChange={(e) => updateFields({ age: e.target.value })} />
+      <FormInput label='First Name' name='firstName' value={firstName} onChange={(val) => updateFields({ firstName: val })} required />
+      <FormInput label='Last Name' name='lastName' value={lastName} onChange={(val) => updateFields({ lastName: val })} required />
+      <FormInput label='Age' name='age' type='number' value={age} onChange={(val) => updateFields({ age: val })} required />
     </FormWrapper>
   );
 };

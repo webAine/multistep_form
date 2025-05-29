@@ -46,3 +46,12 @@ type AccountData = {
 export type AccountFormProps = AccountData & {
   updateFields: (fields: Partial<AccountData>) => void;
 };
+
+export type FormInputProps = {
+  label: string;
+  value: string;
+  name: string;
+  onChange: (value: string) => void;
+  type?: string;
+  required?: boolean;
+};
